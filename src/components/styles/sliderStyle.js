@@ -21,7 +21,7 @@ export const Brightness = withStyles({
     valueLabel: {
         left: 'calc(-50% + 4px)',
         color: 'black',
-        display: 'none',
+        //display: 'none',
     },
     track: {
         height: 10,
