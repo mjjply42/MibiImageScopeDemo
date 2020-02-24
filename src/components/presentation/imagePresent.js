@@ -90,10 +90,16 @@ export const Image = (props) => {
         for (let i = 0; i < data.length; i+=4) {
             if ((data[i] + val) >= initialPixelData.data[i])
                 data[i] = (data[i] + val); //red
+            else
+                data[i] = initialPixelData.data[i]
             if ((data[i+1] + val) >= initialPixelData.data[i+1])
                 data[i+1] = (data[i+1] + val); //green
+            else
+                data[i+1] = initialPixelData.data[i+1]
             if ((data[i+2] + val) >= initialPixelData.data[i+2])
                 data[i+2] = (data[i+2] + val); //blue
+            else
+                data[i+2] = initialPixelData.data[i+2]
             //data[i+3] = 255; //alpha
         }
         console.log(data[0], data[1], data[2], data[4], data[5], data[6])
@@ -116,6 +122,8 @@ export const Image = (props) => {
         for (let i = 0; i < data.length; i+=4) {
             if ((data[i] + val) >= initialPixelData.data[i])
                 data[i] = (data[i] + val); //red
+            else
+                data[i] = initialPixelData.data[i]
         }
     }
 
@@ -136,6 +144,8 @@ export const Image = (props) => {
         for (let i = 0; i < data.length; i+=4) {
             if ((data[i+1] + val) >= initialPixelData.data[i+1])
                 data[i+1] = (data[i+1] + val); //green
+            else
+                data[i+1] = initialPixelData.data[i+1]
         }
     }
 
@@ -156,6 +166,8 @@ export const Image = (props) => {
         for (let i = 0; i < data.length; i+=4) {
             if ((data[i+2] + val) >= initialPixelData.data[i+2])
                 data[i+2] = (data[i+2] + val); //blue
+            else
+                data[i+2] = initialPixelData.data[i+2]
         }
     }
 
