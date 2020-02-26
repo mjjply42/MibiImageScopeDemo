@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Typography from '@material-ui/core/Typography';
 import { Slide } from './slide';
 
 
 
 export const Sliders = (props) => {
-    
+
+    const availableSliders = [
+        {slider: "bright", name: "Brightness"},
+        {slider: "red", name: "Red"},
+        {slider: "green", name: "Green"},
+        {slider: "blue", name: "Blue"}
+    ]
+
     return (
         <>
             <div style={styles.sliderBox}>
-                <Slide scaleUpdate={props.scaleUpdate} slider={'bright'} name={'Brightness'} />
-                <Slide scaleUpdate={props.scaleUpdate} slider={'red'} name={'Red'} />
-                <Slide scaleUpdate={props.scaleUpdate} slider={'green'} name={'Green'} />
-                <Slide scaleUpdate={props.scaleUpdate} slider={'blue'} name={'Blue'} />
+                {availableSliders.map((item, index) => {
+                    return (
+                        <Fragment key={index}>
+                            <Typography gutterBottom>{item.name}</Typography>
+                            <Slide scaleUpdate={props.scaleUpdate} 
+                                slider={item.slider} name={item.name}/>
+                        </Fragment>
+                    )
+                })}
             </div>
         </>
     )
