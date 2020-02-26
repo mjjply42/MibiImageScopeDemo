@@ -7,7 +7,7 @@ export const Slide = (props) => {
         return (
             <>
                 <Brightness onChange={(e, val) => props.scaleUpdate('bright', val)} valueLabelDisplay="auto" 
-                    aria-label="pretto slider" defaultValue={0} max={200} />
+                    aria-label="pretto slider" defaultValue={0} max={50} />
             </>
         )
     }

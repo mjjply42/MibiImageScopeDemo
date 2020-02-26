@@ -48,17 +48,15 @@ export const Image = (props) => {
     const updateChannel = (data, val, name) =>
     {
         let newPrevious = JSON.parse(JSON.stringify(previous))
+        newPrevious[name] = val
         if (val < previous[name])
         {
-            newPrevious[name] = val
             updatePrev(newPrevious)
             val = (previous[name] - val);
             val *= -1;
         }
         else
         {
-            
-            newPrevious[name] = val
             updatePrev(newPrevious)
             val = (val - previous[name]);
         }
